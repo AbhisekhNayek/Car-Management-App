@@ -88,7 +88,7 @@ The **Car Management Application** is a powerful platform for users to create, v
 - Documentation generated using **Swagger** or **Postman**.
 
 ## 🌍 Deployment
-- The application is deployed on **Vercel**. Check out the live app here: [Deployment Link](https://your-app-url.com)
+- The application is deployed on **Vercel**. Check out the live app here: [Deployment Link](https://car-management-app-eight.vercel.app/login)
 
 ## 🚧 Future Enhancements
 - 🛠️ Add advanced search filters.
@@ -96,8 +96,10 @@ The **Car Management Application** is a powerful platform for users to create, v
 - ✂️ Support image editing and resizing.
 
 ## 📸 Screenshots
-![Home Page Screenshot](https://via.placeholder.com/800x400)
-![Car Details Screenshot](https://via.placeholder.com/800x400)
+<div style="display: flex; justify-content: space-between;">
+  <img src="https://github.com/AbhisekhNayek/Car-Management-App/blob/main/Screenshot/Signin.png" alt="Sign In Page Screenshot" width="45%" />
+  <img src="https://github.com/AbhisekhNayek/Car-Management-App/blob/main/Screenshot/Signup.png" alt="Sign Up Page Screenshot" width="45%" />
+</div>
 
 ## 🤝 Contributing
 Contributions are welcome! Feel free to open issues or submit pull requests to improve the project. 🌟
