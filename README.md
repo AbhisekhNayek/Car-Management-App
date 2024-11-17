@@ -88,7 +88,7 @@ The **Car Management Application** is a powerful platform for users to create, v
 - Documentation generated using **Swagger** or **Postman**.
 
 ## 🌍 Deployment
-- The application is deployed on **Vercel**. Check out the live app here: [Deployment Link](https://car-management-app-eight.vercel.app/login)
+- The application is deployed on **Vercel**. Check out the live app here: [Deployment Link](https://car-management-app-eight.vercel.app/)
 
 ## 🚧 Future Enhancements
 - 🛠️ Add advanced search filters.
