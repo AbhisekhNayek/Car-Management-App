@@ -2,49 +2,33 @@ const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
 const cors = require("cors");
+const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
-const morgan = require("morgan"); // HTTP request logging
 
+// Import routes
 const authRoutes = require("./routes/auth.routes");
 const carRoutes = require("./routes/car.routes");
 
+dotenv.config();
+
 const app = express();
-
-// Middleware for HTTP request logging (only in development)
-if (process.env.NODE_ENV === "development") {
-  app.use(morgan("dev"));
-}
-
-const corsOptions = {
-  origin: process.env.CLIENT_URL,
-  credentials: true,
-};
-
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 
+
+// Use routes
 app.use("/api/auth", authRoutes);
 app.use("/api/cars", carRoutes);
-
+// Add a route for the root URL
 app.get("/", (req, res) => {
   res.send("Welcome to the Car Management API");
 });
-
-// MongoDB connection
+// Connect to MongoDB
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => console.log("Database connected"))
-  .catch((err) => {
-    console.error("MongoDB connection error:", err.message);
-    process.exit(1); // Exit process if connection fails
-  });
+  .catch((err) => console.log(err));
 
-// Graceful shutdown (handle process termination)
-process.on("SIGINT", async () => {
-  console.log("Closing server and database connection...");
-  await mongoose.connection.close();
-  process.exit(0);
-});
-
-module.exports = app;
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
